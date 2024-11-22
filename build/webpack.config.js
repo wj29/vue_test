@@ -10,7 +10,7 @@ module.exports = env => {
   return {
     entry: resolve('src/main.js'), // 项目入口文件
     output: {
-      publicPath: env.production ? '/vue_test/' : '/'
+      publicPath: env.production ? '/vue_test/' : '/',
       path: resolve('dist'),
       filename: '[name].bundle.js',
     },
