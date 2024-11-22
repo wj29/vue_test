@@ -11,7 +11,7 @@ module.exports = {
   output: {
     publicPath: process.env.NODE_ENV === 'production' ? '/vue_test/' : '/',
     path: resolve('dist'),
-    filename: 'bundle.js',
+    filename: 'js/[name].bundle.js',
   },
   module: {
     rules: [
