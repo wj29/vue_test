@@ -7,7 +7,7 @@ function resolve(dir) {
 }
 
 module.exports = {
-  entry: './src/main.js', // 项目入口文件
+  entry: resolve('src/index.js'), // 项目入口文件
   output: {
     publicPath: process.env.NODE_ENV === 'production' ? '/vue_test/' : '/',
     path: resolve('dist'),
@@ -40,11 +40,13 @@ module.exports = {
   plugins: [
     new VueLoaderPlugin(), // 必须添加这个插件以支持 vue-loader
     new HtmlWebpackPlugin({
-      template: './src/index.html', // 指定 HTML 模板
+      template: resolve('src/index.html'), // 指定 HTML 模板
+      inject: 'body',  // 确保 JS 文件插入到 <body> 标签底部
+      publicPath: process.env.NODE_ENV === 'production' ? '/vue_test/' : '/',
     }),
   ],
   devServer: {
-    static: path.resolve(__dirname, 'dist'),
+    static: resolve('dist'),
     hot: true,
   },
   mode: 'development', // 设置开发模式
