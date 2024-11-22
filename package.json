@@ -5,9 +5,9 @@
   "main": "./src/main.js",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "start": "webpack-dev-server --mode=development --config ./build/webpack.config.js --host 0.0.0.0"
+    "start": "webpack-dev-server --mode=development --config ./build/webpack.config.js --host 0.0.0.0",
+    "build": "npm run lint && webpack --progress --mode=production --config ./build/webpack.config.js",
   },
   "dependencies": {
     "core-js": "^3.8.3",

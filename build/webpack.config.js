@@ -2,10 +2,15 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 
+function resolve(dir) {
+  return path.join(__dirname, '..', dir);
+}
+
 module.exports = {
   entry: './src/main.js', // 项目入口文件
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    publicPath: process.env.NODE_ENV === 'production' ? '/vue_test/' : '/',
+    path: resolve('dist'),
     filename: 'bundle.js',
   },
   module: {
