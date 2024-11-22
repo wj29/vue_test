@@ -43,7 +43,7 @@ module.exports = env => {
       new HtmlWebpackPlugin({
         template: resolve('src/index.html'), // 指定 HTML 模板
         inject: 'body',  // 确保 JS 文件插入到 <body> 标签底部
-        publicPath: process.env.NODE_ENV === 'production' ? '/vue_test/' : '/',
+        publicPath: env.production ? '/vue_test/' : '/',
       }),
     ],
     devServer: {
