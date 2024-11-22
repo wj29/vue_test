@@ -6,11 +6,10 @@ function resolve(dir) {
   return path.join(__dirname, '..', dir);
 }
 
-module.exports = env => {
+module.exports = args => {
   return {
     entry: resolve('src/main.js'), // 项目入口文件
     output: {
-      publicPath: env.production ? '/vue_test/' : '/',
       path: resolve('dist'),
       filename: '[name].bundle.js',
     },
@@ -43,7 +42,7 @@ module.exports = env => {
       new HtmlWebpackPlugin({
         template: resolve('src/index.html'), // 指定 HTML 模板
         inject: 'body',  // 确保 JS 文件插入到 <body> 标签底部
-        publicPath: env.production ? '/vue_test/' : '/',
+        publicPath: args.production ? '/vue_test/' : '/',
       }),
     ],
     devServer: {
