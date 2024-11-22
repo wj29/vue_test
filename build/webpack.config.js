@@ -10,7 +10,7 @@ module.exports = {
   entry: './src/main.js', // 项目入口文件
   build: {
     assetsPublicPath: process.env.NODE_ENV === 'production' ? '/vue_test/' : '/',
-  }
+  },
   output: {
     publicPath: process.env.NODE_ENV === 'production' ? '/vue_test/' : '/',
     path: resolve('dist'),
