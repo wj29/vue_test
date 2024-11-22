@@ -7,7 +7,7 @@ function resolve(dir) {
 }
 
 module.exports = {
-  entry: resolve('src/index.js'), // 项目入口文件
+  entry: resolve('src/main.js'), // 项目入口文件
   output: {
     publicPath: process.env.NODE_ENV === 'production' ? '/vue_test/' : '/',
     path: resolve('dist'),
