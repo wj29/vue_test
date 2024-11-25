@@ -6,15 +6,23 @@
     <li><a href="https://www.google.com">谷歌</a></li>
   </ol>
   <button @click="welcome">展示欢迎您</button>
-  <router-view></router-view>
+  <router-view v-if="show"></router-view>
 </template>
 
 <script>
   export default {
     name: "Contact",
+    data() {
+      return {
+        show: true ,
+      }
+    },
     methods: {
       welcome() {
-        this.$router.push("/ip")
+        if (this.show) {
+          this.$router.push("/ip")
+        }
+        this.show = !this.show
       }
     }
   }
