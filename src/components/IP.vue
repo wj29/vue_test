@@ -56,7 +56,7 @@ import http_model from "../models/http"
         http_model.get("https://www.baidu.com", {
 
         }).then((res) => {
-          console.log("调用成功了")
+          console.log("调用成功了", res)
           this.result = [
             {
               "id": 3,
